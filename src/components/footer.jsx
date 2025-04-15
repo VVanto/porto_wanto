@@ -32,7 +32,7 @@ function Footer() {
   return (
     <footer>
       <div
-        className={`py-12 px-20 text-m flex items-center justify-between ${mont.className}`}
+        className={`py-12 px-20 text-m flex items-center justify-between font-futura`}
       >
         <h3>
           Feel free to reach out if you have a job offer <br /> or simply
@@ -40,7 +40,7 @@ function Footer() {
         </h3>
         <h3>(●'◡'●)</h3>
       </div>
-      <Marquee autoFill direction="right" speed={90} className="py-8 bg-red ">
+      <Marquee autoFill direction="right" speed={90} className="py-8 bg-red text-black ">
         {[
           {
             text: "www.nicosuwanto@gmail.com ↬",

@@ -8,6 +8,7 @@ import Navbar from "@/components/navbar";
 import Marquee from "react-fast-marquee";
 import { Montserrat } from "next/font/google";
 import { Cormorant_Garamond } from "next/font/google";
+
 import Footer from "@/components/footer";
 
 const manrope = Manrope({
@@ -24,6 +25,8 @@ const cormo = Cormorant_Garamond({
   weight: ["400"],
   subsets: ["latin"],
 });
+
+
 
 function Home() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -70,15 +73,15 @@ function Home() {
   };
 
   return (
-    <div className="bg-orange">
+    <div className="bg-black text-white">
       <Navbar />
 
       <header className="px-4 py-20 flex flex-col lg:flex-row gap-8 items-center justify-center">
         <Image src={profpic} width={400} alt="Picture of the author" />
 
         <div
-          className={`${manrope.className} text-left`}
-          style={{ fontWeight: 700 }}
+          className={"font-futura text-left"}
+          style={{ fontWeight: 500 }}
         >
           <h1 className="text-judulhp lg:text-judul">
             The Future is <br />
@@ -90,14 +93,14 @@ function Home() {
       <div
         className={`${manrope.className} grid self-end text-jalanhp lg:text-jalan `}
       >
-        <Marquee autoFill speed={70} className="bg-blue">
+        <Marquee autoFill speed={70} className="bg-blue text-black">
           <h3> ⚫ FRONTEND DEVELOPER </h3>
           <h3> ⚫ MOBILE DEVELOPER </h3>
           <h3> ⚫ INTERACTIVE DESIGN </h3>
           <h3> ⚫ TEAMWORK </h3>
           <h3> ⚫ ENGLISH </h3>
         </Marquee>
-        <Marquee autoFill direction="right" speed={70} className="bg-custard">
+        <Marquee autoFill direction="right" speed={70} className="bg-custard text-black">
           <h3> ⚫ HTML </h3>
           <h3> ⚫ CSS </h3>
           <h3> ⚫ JAVASCRIPT </h3>
@@ -111,9 +114,9 @@ function Home() {
         </Marquee>
       </div>
 
-      <div className={mont.className}>
-        <div className="text-mont">
-          <p className="text-isihp lg:text-isi lg:pr-550 py-20 pb-4 mx-5 lg:mx-20">
+      <div className="font-futura">
+        <div>
+          <p className="text-isihp font-thin lg:text-isi lg:pr-550 py-20 pb-4 mx-5 lg:mx-20">
             I'm a junior Front-end Developer passionate about learning and
             growing in this field. I believe success comes from hard work and
             good things happen to those who put in the effort. My motto is if
@@ -123,7 +126,7 @@ function Home() {
         </div>
 
         <div
-          className={`mx-5 lg:mx-20 py-5 border-t border-black flex flex-col lg:flex-row lg:items-center justify-between ${manrope.className}`}
+          className={`mx-5 lg:mx-20 py-5 border-t border-white flex flex-col lg:flex-row lg:items-center justify-between font-futura`}
         >
           <p>SOME PLACE I'VE WORKED FOR</p>
           <h3 className=" text-jalanhp lg:text-jalan">
@@ -132,21 +135,21 @@ function Home() {
         </div>
 
         <div
-          className={`mx-5 lg:mx-20 py-8 border-t border-black  ${manrope.className}`}
+          className={`mx-5 lg:mx-20 py-8 border-t border-white font-futura`}
         >
-          <p className="font-bold mb-5">WHAT I DO</p>
+          <p className="mb-5">WHAT I DO</p>
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 relative">
             {[0, 1, 2, 3].map((index) => (
               <div
                 key={index}
                 className={`p-4 ${
-                  index < 4 ? "max-md:border-b lg:border-r border-black" : ""
+                  index < 4 ? "max-md:border-b lg:border-r border-white" : ""
                 }`}
                 style={getColumnStyle(index)}
                 onMouseEnter={() => handleHover(index)}
                 onMouseLeave={handleLeave}
               >
-                <h2 className="text-subjudulhp lg:text-subjudul font-semibold mb-2">
+                <h2 className="text-subjudulhp lg:text-subjudul mb-2">
                   {
                     [
                       "Web Development",
@@ -172,11 +175,12 @@ function Home() {
         </div>
       </div>
 
-      <Marquee autoFill direction="left" speed={90} className="py-8 bg-tiffany">
+      <Marquee autoFill direction="left" speed={90} className="py-8 bg-white text-navy">
         {[
           { text: "VIEW MY WORKS ↬", font: manrope.className, fontWeight: 700 },
           { text: "VIEW MY WORKS →", font: mont.className, fontWeight: 500 },
           { text: "VIEW MY WORKS ⇨", font: cormo.className, fontWeight: 600 },
+          
         ].map((item, index) => (
           <h3
             key={index}
@@ -188,8 +192,8 @@ function Home() {
         ))}
       </Marquee>
       <div
-        className={`px-5 lg:px-48 py-24 flex flex-col lg:flex-row lg:items-center text-par ${manrope.className}`}
-        style={{ fontWeight: 700 }}
+        className={`px-5 lg:px-48 py-24 flex flex-col lg:flex-row lg:items-center text-par font-futura`}
+  
       >
         <h1>When I'm not coding</h1>
         <Image
@@ -204,7 +208,7 @@ function Home() {
           or reading a book
         </h1>
       </div>
-      <Footer />
+      <Footer/>
     </div>
   );
 }

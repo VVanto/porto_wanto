@@ -17,9 +17,12 @@ const mont = Montserrat({
 
 function Contact() {
   return (
-    <div className={`bg-pink ${cormo.className}`}>
-      <Navbar />
-      <div className=" grid grid-rows-3 lg:grid-cols-2 lg:grid-rows-2 h-screen">
+    <div className="bg-pink">
+      <Navbar variant="light" />
+
+      <div
+        className={` grid grid-rows-3 lg:grid-cols-2 lg:grid-rows-2 h-screen ${cormo.className}`}
+      >
         <div className="py-20 px-5 lg:p-20 text-akhirhp lg:text-akhir row-span-1 col-span-1">
           <h1>
             Contact <br /> Me
@@ -41,7 +44,9 @@ function Contact() {
               <a href="https://x.com/_vvanto_">X</a>
             </li>
             <li className="hover:border-b-4 hover:border-black transition-all duration-200">
-              <a href="https://www.facebook.com/nico.wanto.1/?locale=id_ID">Facebook</a>
+              <a href="https://www.facebook.com/nico.wanto.1/?locale=id_ID">
+                Facebook
+              </a>
             </li>
             <li className="hover:border-b-4 hover:border-black transition-all duration-200">
               <a href="https://line.me/ti/p/QGT4OLRrIi">Line</a>

@@ -1,14 +1,11 @@
 "use client";
 import Navbar from "../components/navbar";
-import { Cormorant_Garamond } from "next/font/google";
+
 import { Montserrat } from "next/font/google";
 import Footer from "@/components/footer";
 import "@/app/globals.css";
 
-const cormo = Cormorant_Garamond({
-  weight: ["600"],
-  subsets: ["latin"],
-});
+
 
 const mont = Montserrat({
   weight: ["500"],
@@ -21,7 +18,7 @@ function Contact() {
       <Navbar variant="light" />
 
       <div
-        className={` grid grid-rows-3 lg:grid-cols-2 lg:grid-rows-2 h-screen ${cormo.className}`}
+        className={` grid grid-rows-3 lg:grid-cols-2 lg:grid-rows-2 h-screen font-opti`}
       >
         <div className="py-20 px-5 lg:p-20 text-akhirhp lg:text-akhir row-span-1 col-span-1">
           <h1>
@@ -55,7 +52,7 @@ function Contact() {
         </div>
         <div className="py-20 px-5 lg:p-20 text-akhirhp lg:text-akhir row-span-1 col-span-1 flex justify-end items-end text-right">
           <h1>
-            Nico <br /> Suwanto
+            Nico <br /> Wanto
           </h1>
         </div>
       </div>

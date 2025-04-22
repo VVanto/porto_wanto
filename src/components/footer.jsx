@@ -68,7 +68,7 @@ function Footer() {
         ))}
       </Marquee>
 
-      <h3 className={`px-20 py-10 flex justify-end text-s ${space.className}`}>©{year} TILL A COUPLE YEARS, VIELLEICHT?</h3>
+      <h3 className={`px-20 py-10 flex justify-end text-s font-futura`}>©{year} TILL A COUPLE YEARS, VIELLEICHT?</h3>
     </footer>
   );
 }

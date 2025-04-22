@@ -73,7 +73,7 @@ function Home() {
   };
 
   return (
-    <div className="bg-black text-white">
+    <div className="bg-navy text-beige">
       <Navbar />
 
       <header className="px-4 py-20 flex flex-col lg:flex-row gap-8 items-center justify-center">
@@ -175,7 +175,7 @@ function Home() {
         </div>
       </div>
 
-      <Marquee autoFill direction="left" speed={90} className="py-8 bg-white text-navy">
+      <Marquee autoFill direction="left" speed={90} className="py-8 bg-pink text-black">
         {[
           { text: "VIEW MY WORKS ↬", font: manrope.className, fontWeight: 700 },
           { text: "VIEW MY WORKS →", font: mont.className, fontWeight: 500 },

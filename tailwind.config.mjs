@@ -7,12 +7,6 @@ export default {
   ],
   theme: {
     extend: {
-      keyframes: {
-        streak: {
-          "0%": { transform: "translate3d(0, 0, 0)", opacity: "0.4" },
-          "100%": { transform: "translate3d(-80px, 0, 0)", opacity: "0" }, // makin panjang biar dramatis
-        },
-      },
       animation: {
         streak: "streak 1.5s linear infinite",
         "streak-delay-1": "streak 1.5s linear infinite 0.2s",
@@ -22,9 +16,8 @@ export default {
       },
 
       fontFamily: {
-        futura: ["FuturaCustom", "sans-serif"],
-        opti: ["OptiCustom", "serif"],
-        sfpro: ["sfproCustom", "sans-serif"],
+
+        sablon: ["SablonCustom", "sans-serif"],
       },
       colors: {
         yellow: "#F9E400",
@@ -33,16 +26,16 @@ export default {
         pink: "#f5a9e3",
         green: "#adc178",
         blue: "#6268fc",
-        custard: "#D0F25A",
+        purple: "#ED2788",
         tiffany: "#81D8D0",
         navy: "#001F3F",
-        beige: "#FBE4D6"
+        beige: "#FBE4D6",
       },
       spacing: {
         550: "550px",
       },
       fontSize: {
-        nav: ["3rem", { lineHeight: "3rem", letterSpacing: "-0.01em" }],
+        nav: ["3rem", { lineHeight: "3rem", letterSpacing: "0em" }],
         navtext: ["1.5rem", { lineHeight: "4rem", letterSpacing: "-0.01em" }],
         judul: ["5.75rem", { lineHeight: "5rem", letterSpacing: "-4px" }],
         judulhp: ["4rem", { lineHeight: "3.5rem", letterSpacing: "-2.5px" }],
@@ -56,8 +49,10 @@ export default {
         isihp: ["1.75rem", { lineHeight: "2rem", letterSpacing: "-1.75px" }],
         par: ["1.5rem", { lineHeight: "2.25rem", letterSpacing: "-1px" }],
         parhp: ["1.25rem", { lineHeight: "2.25rem", letterSpacing: "-1px" }],
-        akhir: ["8.5rem", { lineHeight: "6rem", letterSpacing: "0.01em" }],
+        akhir: ["8.5rem", { lineHeight: "6rem", letterSpacing: "0em" }],
         akhirhp: ["6.5rem", { lineHeight: "6rem", letterSpacing: "-7px" }],
+        footer: ["1.3rem", { lineHeight: "1.5rem", letterSpacing: "-0.08em" }],
+        footerhp: ["1.25rem", { lineHeight: "3rem", letterSpacing: "-0.01em" }],
       },
     },
   },

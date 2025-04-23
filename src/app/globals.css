@@ -3,9 +3,11 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'FuturaCustom';
-    src: url('/fonts/futura.ttf') format('truetype');
+    font-family: 'SablonCustom';
+    src: url('/fonts/sablon.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
   }
+  
+
   

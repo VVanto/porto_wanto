@@ -22,7 +22,7 @@ const cormo = Cormorant_Garamond({
 
 const space = Space_Mono({
   subsets: ["latin"],
-  weight:["400"]
+  weight: ["400"],
 });
 
 const date = new Date();
@@ -32,15 +32,15 @@ function Footer() {
   return (
     <footer>
       <div
-        className={`py-12 px-20 text-m flex items-center justify-between font-futura`}
+        className={`py-12 px-20 text-m flex items-center justify-between ${mont.className}`}
       >
         <h3>
-          Feel free to reach out if you have a job offer <br /> or simply
-          just want a chat.
+          Feel free to reach out if you have a job offer <br /> or simply just
+          want a chat.
         </h3>
         <h3>(●'◡'●)</h3>
       </div>
-      <Marquee autoFill direction="right" speed={90} className="py-8 bg-red text-black ">
+      <Marquee autoFill direction="right" speed={90} className="py-8 bg-red text-black">
         {[
           {
             text: "www.nicosuwanto@gmail.com ↬",
@@ -68,7 +68,9 @@ function Footer() {
         ))}
       </Marquee>
 
-      <h3 className={`px-20 py-10 flex justify-end text-s font-futura`}>©{year} TILL A COUPLE YEARS, VIELLEICHT?</h3>
+      <h3 className={`px-20 py-10 flex justify-end text-s ${space.className}`}>
+        ©{year} TILL A COUPLE YEARS, VIELLEICHT?
+      </h3>
     </footer>
   );
 }

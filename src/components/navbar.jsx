@@ -3,49 +3,102 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { EB_Garamond } from "next/font/google";
 
+const garam = EB_Garamond({
+  weight: ["400"],
+  subsets: ["latin"],
+});
 
-function Navbar({ variant = "dark" }) {
+function WavyText({ text }) {
+  return (
+    <>
+      {text.split("").map((char, i) => (
+        <span
+          key={i}
+          className="inline-block transition-transform duration-200 ease-in-out group-hover:-rotate-180 group-hover:translate-x-[2px]"
+          style={{ transitionDelay: `${i * 40}ms` }}
+        >
+          {char}
+        </span>
+      ))}
+    </>
+  );
+}
+
+export default function Navbar({ variant = "dark" }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [rotation, setRotation] = useState(0);
   const pathname = usePathname();
+
   const isDark = variant === "dark";
   const textColor = isDark ? "text-beige" : "text-navy";
   const lineColor = isDark ? "bg-beige" : "bg-navy";
   const underlineColor = isDark ? "after:bg-beige" : "after:bg-navy";
 
-  // Tutup menu saat pindah halaman
+  // Mapping warna sidebar untuk tiap halaman
+  const pageColors = {
+    "/": "bg-navy", // Home page
+    "/work": "bg-tiffany", // Work page
+    "/contact": "bg-pink", // Contact page
+  };
+
+  const currentSidebarColor =
+    pageColors[pathname] || (isDark ? "bg-navy" : "bg-beige");
+
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);
 
-  // Tutup menu saat scroll
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
       if (mobileMenuOpen) setMobileMenuOpen(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setRotation(window.scrollY * 0.26);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [mobileMenuOpen]);
 
-
-  
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/work", label: "Work" },
+    { href: "/contact", label: "Contact" },
+  ];
 
   return (
-    <nav className="font-futura relative z-50">
+    <nav className="font-sablon relative z-50 sticky top-0">
       <div className="px-5 lg:px-10 pt-6 flex items-center justify-between">
-        {/* Burger button - always visible */}
-        <div className="z-50">
+        <div className="w-6 lg:hidden" />
+        <div>
+          <h1
+            className={`inline-flex items-center justify-center transform origin-center text-nav ${textColor} ${garam.className}`}
+            style={{
+              transform: `rotate(${rotation}deg)`,
+              transition: "transform 0.1s linear",
+            }}
+          >
+            ns.
+          </h1>
+        </div>
+
+        <div className="z-50 lg:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`relative w-5 h-4 flex flex-col items-center justify-center gap-y-[4px] transition-transform duration-300 ease-in-out ${
+            className={`relative w-6 h-6 flex flex-col items-center justify-center gap-y-[4px] transition-transform duration-300 ease-in-out ${
               mobileMenuOpen ? "scale-110" : "scale-100"
             }`}
             aria-label="Toggle menu"
           >
             <span
               className={`block h-0.5 w-full ${lineColor} transform origin-center transition duration-300 ease-in-out ${
-                mobileMenuOpen ? "rotate-45 translate-y-[6px]" : ""
+                mobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
               }`}
             />
             <span
@@ -55,59 +108,52 @@ function Navbar({ variant = "dark" }) {
             />
             <span
               className={`block h-0.5 w-full ${lineColor} transform origin-center transition duration-300 ease-in-out ${
-                mobileMenuOpen ? "-rotate-45 -translate-y-[6px]" : ""
+                mobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
               }`}
             />
           </button>
         </div>
 
-        {/* Nama & Role */}
-        <div className="  text-center">
-          <h1
-            className={`relative inline-block text-nav ${textColor} font-opti`}
-          >
-           
-            Nico Wanto
-          </h1>
-
-          <h2 className={`text-navtext ${textColor}`}>
-            Frontend Developer & UI/UX Designer
-          </h2>
-        </div>
-
-        <div className="w-6" />
+        {/* Desktop Menu */}
+        <ul className={`hidden lg:flex gap-10 text-navtext ${textColor}`}>
+          {navLinks.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className={`group relative w-fit ${textColor} after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 ${underlineColor}`}
+              >
+                <WavyText text={item.label} />
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
 
-      {/* Sidebar menu (semua mode) */}
+      {/* Sidebar overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out backdrop-blur-sm ${
+        className={`fixed inset-0 z-40 transition-opacity backdrop-blur-sm ${
           mobileMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
-        }`}
+        } bg-opacity-90 transition-all duration-500 ease-in-out`}
         onClick={() => setMobileMenuOpen(false)}
       >
+        {/* Sidebar */}
         <div
-          className={`absolute top-0 left-0 w-3/4 md:w-1/3 h-full ${
-            isDark ? "bg-navy/70" : "bg-beige/80"
-          } backdrop-blur-lg shadow-lg pt-28 p-5 transform transition-transform duration-300 ease-in-out ${
-            mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+          className={`absolute top-0 right-0 w-3/4 md:w-1/3 h-full ${currentSidebarColor} backdrop-blur-sm bg-opacity-90 shadow-lg pt-28 p-5 transform transition-transform duration-500 ease-in-out ${
+            mobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
           onClick={(e) => e.stopPropagation()}
         >
           <ul className="space-y-6 pl-5 pt-10 text-xl">
-            {[
-              { href: "/", label: "Home" },
-              { href: "/work", label: "Work" },
-              { href: "/contact", label: "Contact" },
-            ].map((item) => (
+            {navLinks.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block relative w-fit ${textColor} after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 ${underlineColor}`}
+                  className={`group block relative w-fit ${textColor} after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 ${underlineColor}`}
                 >
-                  {item.label}
+                  <WavyText text={item.label} />
                 </Link>
               </li>
             ))}
@@ -115,12 +161,10 @@ function Navbar({ variant = "dark" }) {
 
           <div className={`mt-8 pl-5 ${textColor}`}>
             <h1>Currently working on</h1>
-            <h2 className="font-semibold">PT. Pharos Indonesia</h2>
+            <h2 className="font-sablon">PT. Pharos Indonesia</h2>
           </div>
         </div>
       </div>
     </nav>
   );
 }
-
-export default Navbar;

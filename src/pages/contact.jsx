@@ -35,7 +35,7 @@ function Contact() {
   };
 
   return (
-    <div className="bg-pink">
+    <div className="bg-">
       <Navbar variant="light" />
 
       <div

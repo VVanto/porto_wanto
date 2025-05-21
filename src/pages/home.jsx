@@ -124,14 +124,14 @@ export default function Home() {
           the lottery, you need to earn the money to buy a ticket.
         </p>
 
-        <div className="mx-5 lg:mx-20 py-5 border-t border-white flex flex-col lg:flex-row lg:items-center justify-between">
+        <div className="mx-5 lg:mx-20 py-5 border-t border-beige flex flex-col lg:flex-row lg:items-center justify-between">
           <p>SOME PLACE I'VE WORKED FOR</p>
           <h3 className="text-jalanhp lg:text-jalan">
             PT Pharos Indonesia / Freelance
           </h3>
         </div>
 
-        <div className="mx-5 lg:mx-20 py-8 border-t border-white">
+        <div className="mx-5 lg:mx-20 py-8 border-t border-beige">
           <p className="mb-5">WHAT I DO</p>
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 relative">
             {[
@@ -155,7 +155,7 @@ export default function Home() {
               <div
                 key={idx}
                 className={`p-4 ${
-                  idx < 3 ? "max-md:border-b lg:border-r border-white" : ""
+                  idx < 3 ? "max-md:border-b lg:border-r border-beige" : ""
                 }`}
                 style={getColumnStyle(idx)}
                 onMouseEnter={() => handleHover(idx)}
@@ -176,7 +176,7 @@ export default function Home() {
         autoFill
         direction="left"
         speed={90}
-        className="py-8 bg-pink text-black"
+        className="py-8 bg-white text-black"
       >
         {marqueeItems.map((item, i) => (
           <Link

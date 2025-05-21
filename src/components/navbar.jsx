@@ -36,11 +36,10 @@ export default function Navbar({ variant = "dark" }) {
   const lineColor = isDark ? "bg-beige" : "bg-navy";
   const underlineColor = isDark ? "after:bg-beige" : "after:bg-navy";
 
-  // Mapping warna sidebar untuk tiap halaman
   const pageColors = {
-    "/": "bg-navy", // Home page
-    "/work": "bg-tiffany", // Work page
-    "/contact": "bg-pink", // Contact page
+    "/": "bg-navy", 
+    "/work": "bg-tiffany", 
+    "/contact": "bg-white", 
   };
 
   const currentSidebarColor =

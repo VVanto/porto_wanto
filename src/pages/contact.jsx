@@ -35,8 +35,8 @@ function Contact() {
   };
 
   return (
-    <div className="bg-sky">
-      <Navbar variant="light" />
+    <div className="bg-midnightGrape text-beige">
+      <Navbar/>
 
       <div
         className={` grid grid-rows-3 lg:grid-cols-2 lg:grid-rows-2 h-screen ${garam.className}`}

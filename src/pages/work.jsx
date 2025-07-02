@@ -18,7 +18,7 @@ const manrope = Manrope({
 });
 function Work() {
   return (
-    <div className="bg-green text-beige">
+    <div className="bg-teal text-beige">
       <Navbar />
       <div className={`${manrope.className}`}>
         <div>

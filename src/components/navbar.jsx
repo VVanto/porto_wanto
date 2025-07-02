@@ -38,8 +38,8 @@ export default function Navbar({ variant = "dark" }) {
 
   const pageColors = {
     "/": "bg-navy", 
-    "/work": "bg-green", 
-    "/contact": "bg-sky", 
+    "/work": "bg-teal", 
+    "/contact": "bg-midnightGrape", 
   };
 
   const currentSidebarColor =

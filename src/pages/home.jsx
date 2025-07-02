@@ -87,7 +87,7 @@ export default function Home() {
       <div
         className={`${manrope.className} grid self-end text-jalanhp lg:text-jalan`}
       >
-        <Marquee autoFill speed={70} className="bg-tiffany text-black">
+        <Marquee autoFill speed={70} className="bg-blue text-black">
           <h3>⚫ FRONTEND DEVELOPER</h3>
           <h3>⚫ MOBILE DEVELOPER</h3>
           <h3>⚫ INTERACTIVE DESIGN</h3>

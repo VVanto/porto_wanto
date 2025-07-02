@@ -27,9 +27,10 @@ export default {
         sky: "#A4CCD9",
         volt: "#e3f460",
         purple: "#4c4fe5",
-        blue: "#6268fc",
+        
         pink: "#ED2788",
-        tiffany: "#81D8D0",
+        green: "#123524",
+        blue:"#305CDE",
         navy: "#101523",
         beige: "#cfbeb2",
       },

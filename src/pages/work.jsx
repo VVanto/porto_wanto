@@ -18,8 +18,8 @@ const manrope = Manrope({
 });
 function Work() {
   return (
-    <div className="bg-tiffany ">
-      <Navbar variant="light" />
+    <div className="bg-green text-beige">
+      <Navbar />
       <div className={`${manrope.className}`}>
         <div>
           <h1 className="text-judulhp lg:text-judul px-5 py-14 lg:p-24">

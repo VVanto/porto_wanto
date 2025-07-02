@@ -38,7 +38,7 @@ export default function Navbar({ variant = "dark" }) {
 
   const pageColors = {
     "/": "bg-navy", 
-    "/work": "bg-tiffany", 
+    "/work": "bg-green", 
     "/contact": "bg-sky", 
   };
 

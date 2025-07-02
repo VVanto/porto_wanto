@@ -40,7 +40,7 @@ function Footer() {
         </h3>
         <h3>(●'◡'●)</h3>
       </div>
-      <Marquee autoFill direction="right" speed={90} className="py-8 bg-red text-black">
+      <Marquee autoFill direction="right" speed={90} className="py-8 bg-purple text-volt">
         {[
           {
             text: "www.nicosuwanto@gmail.com ↬",

@@ -2,8 +2,11 @@
 import Navbar from "../components/navbar";
 import { Manrope } from "next/font/google";
 import "@/app/globals.css";
+import Image from "next/image";
 import Footer from "@/components/footer";
 import { Space_Mono } from "next/font/google";
+
+import gawe from "@/assets/gawe.json";
 
 const space = Space_Mono({
   subsets: ["latin"],
@@ -25,11 +28,28 @@ function Work() {
           </h1>
         </div>
 
-        <div className={`py-10 md:py-32 px-5 lg:px-28 ${space.className}`}>
-          <h1 className="text-judulhp lg:text-judul"> Nothing here Yet :/</h1>
-          <p className="text-parhp lg:text-par py-28">
-            I'll put something here when something big happening
-          </p>
+        <div className={`py-5 md:py-2 px-5 lg:px-28 ${space.className}`}>
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {gawe.map((item, index) => (
+              <li key={index}>
+                <a href={item.href}>
+                  <Image
+                    className="py-5"
+                    src={item.image}
+                    width={400}
+                    height={200}
+                    alt={item.title}
+                  />
+                  <h1 className="text-subjudulhp lg:text-subjudul">
+                    {item.title}
+                  </h1>
+                </a>
+                <p className="text-parhp lg:text-par py-3">
+                  {item.description}
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
       <Footer />

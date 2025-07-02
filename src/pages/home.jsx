@@ -3,7 +3,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { Manrope } from "next/font/google";
 import Image from "next/image";
-import profpic from "@/assets/profpic.png";
 import Navbar from "@/components/navbar";
 import Marquee from "react-fast-marquee";
 import { Montserrat } from "next/font/google";
@@ -100,7 +99,7 @@ export default function Home() {
           autoFill
           direction="right"
           speed={70}
-          className="bg-purple text-black"
+          className="bg-pink text-black"
         >
           <h3>⚫ HTML</h3>
           <h3>⚫ CSS</h3>
@@ -196,8 +195,9 @@ export default function Home() {
         <h1>When I'm not coding</h1>
         <Image
           className="mx-auto py-10"
-          src={profpic}
+          src="/images/profpic.png"
           width={400}
+          height={700}
           alt="Picture of the author"
         />
         <h1 className="text-right">

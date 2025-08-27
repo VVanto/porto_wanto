@@ -29,14 +29,14 @@ function Work() {
         </div>
 
         <div className={`py-5 md:py-2 px-5 lg:px-28 ${space.className}`}>
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {gawe.map((item, index) => (
               <li key={index}>
                 <a href={item.href}>
                   <Image
                     className="py-5"
                     src={item.image}
-                    width={400}
+                    width={800}
                     height={200}
                     alt={item.title}
                   />

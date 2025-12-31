@@ -37,9 +37,9 @@ export default function Navbar({ variant = "dark" }) {
   const underlineColor = isDark ? "after:bg-beige" : "after:bg-navy";
 
   const pageColors = {
-    "/": "bg-navy", 
-    "/work": "bg-teal", 
-    "/contact": "bg-midnightGrape", 
+    "/": "bg-navy",
+    "/work": "bg-teal",
+    "/contact": "bg-midnightGrape",
   };
 
   const currentSidebarColor =
@@ -157,11 +157,6 @@ export default function Navbar({ variant = "dark" }) {
               </li>
             ))}
           </ul>
-
-          <div className={`mt-8 pl-5 ${textColor}`}>
-            <h1>Currently working on</h1>
-            <h2 className="font-sablon">PT. Pharos Indonesia</h2>
-          </div>
         </div>
       </div>
     </nav>

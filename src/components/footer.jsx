@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 import { Manrope } from "next/font/google";
 import Marquee from "react-fast-marquee";
 import { Montserrat } from "next/font/google";
@@ -25,10 +26,13 @@ const space = Space_Mono({
   weight: ["400"],
 });
 
-const date = new Date();
-let year = date.getFullYear();
-
 function Footer() {
+  const [year, setYear] = useState("");
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer>
       <div

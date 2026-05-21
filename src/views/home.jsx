@@ -9,6 +9,7 @@ import { Montserrat } from "next/font/google";
 import { Cormorant_Garamond } from "next/font/google";
 import { Space_Grotesk } from "next/font/google";
 import Footer from "@/components/footer";
+import ShaderBackground from "@/components/ShaderBackground";
 
 // Fonts
 const manrope = Manrope({
@@ -68,7 +69,9 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-navy text-beige">
+    <div className="text-beige min-h-screen relative">
+      <ShaderBackground speed={0.8} preset="home" />
+      <div className="shader-content">
       <Navbar />
 
       <header className="px-4 py-32 flex flex-col lg:flex-row gap-8 items-center justify-center">
@@ -208,6 +211,7 @@ export default function Home() {
       </div>
 
       <Footer />
+      </div>
     </div>
   );
 }

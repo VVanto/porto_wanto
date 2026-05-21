@@ -1,9 +1,10 @@
 "use client";
-import Navbar from "../components/navbar";
+import Navbar from "@/components/navbar";
 import { Manrope } from "next/font/google";
 import "@/app/globals.css";
 import Image from "next/image";
 import Footer from "@/components/footer";
+import ShaderBackground from "@/components/ShaderBackground";
 import { Space_Mono } from "next/font/google";
 
 import gawe from "@/assets/gawe.json";
@@ -18,7 +19,9 @@ const manrope = Manrope({
 });
 function Work() {
   return (
-    <div className="bg-teal text-beige">
+    <div className="text-beige min-h-screen relative">
+      <ShaderBackground speed={0.8} preset="work" />
+      <div className="shader-content">
       <Navbar />
       <div className={`${manrope.className}`}>
         <div>
@@ -53,6 +56,7 @@ function Work() {
         </div>
       </div>
       <Footer />
+      </div>
     </div>
   );
 }

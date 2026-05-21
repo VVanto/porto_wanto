@@ -24,15 +24,15 @@ export default {
         orange: "#e35214",
         red: "#ED3F32",
         white: "#EEEBE3",
-        teal: "#0f1f20",
+        teal: "#4BB8FA",
         volt: "#e3f460",
         purple: "#4c4fe5",
-        
         pink: "#ED2788",
         midnightGrape: "#1a0e22",
         blue:"#305CDE",
         navy: "#101523",
         beige: "#cfbeb2",
+        maroon: "#541212",
       },
       spacing: {
         550: "550px",

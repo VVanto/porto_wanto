@@ -125,12 +125,12 @@ function Contact() {
                     className="relative inline-block py-1 transition-all duration-300
                                hover:pl-3
                                before:content-[''] before:absolute before:left-0 before:bottom-0
-                               before:h-[2px] before:w-0 before:bg-pink before:transition-all before:duration-300
+                               before:h-[2px] before:w-0 before:bg-beige before:transition-all before:duration-300
                                hover:before:w-full
                                hover:text-white"
                   >
                     <WavyText text={item.label} />
-                    <span className="inline-block ml-2 opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 text-pink">
+                    <span className="inline-block ml-2 opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 text-beige">
                       ↗
                     </span>
                   </a>

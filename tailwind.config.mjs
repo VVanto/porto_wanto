@@ -24,7 +24,7 @@ export default {
         orange: "#e35214",
         red: "#ED3F32",
         white: "#EEEBE3",
-        teal: "#4BB8FA",
+        teal: "#0f1f20",
         volt: "#e3f460",
         purple: "#4c4fe5",
         pink: "#ED2788",
